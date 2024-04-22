@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState, useEffect } from 'react'
-import Tags from "@yaireo/tagify/react.tagify" // React-wrapper file
+import Tags from "@yaireo/tagify/react" // React-wrapper file
 import "../../tagify/dist/tagify.css" // Tagify CSS
 import './App.css'
 
