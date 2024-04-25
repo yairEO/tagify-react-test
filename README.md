@@ -23,6 +23,8 @@ OR download ZIP:
 #### 2. Download/checkout **this repo** and install its dependencies:
 
 ```
+git clone https://github.com/yairEO/tagify-react-test
+
 npm i
 ```
 
