@@ -1,3 +1,7 @@
 #root {
+    padding: 1vh;
+}
 
+fieldset {
+    margin: 0 0 10vh;
 }
