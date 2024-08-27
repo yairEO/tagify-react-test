@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState, useEffect, useMemo } from 'react'
-import Tags, { MixedTags } from "@yaireo/tagify/react" // React-wrapper file
-import "../../tagify/dist/tagify.css" // Tagify CSS
+import Tags, {MixedTags} from "@yaireo/tagify/react" // React-wrapper file
+import "@yaireo/tagify/dist/tagify.css" // Tagify CSS
 import './App.css'
 
 const DEFAULT_PLACEHOLDER_TEXT = 'Add some tags'
@@ -8,6 +8,7 @@ const MAX_TAGS = 3;
 
 function App() {
     const tagifyRef = useRef()
+    const [cn, setCn] = useState('foo bar')
     const [placeholder, setPlaceholder] = useState(DEFAULT_PLACEHOLDER_TEXT)
 
     const updatePlaceholder = () => {
@@ -43,13 +44,22 @@ function App() {
 
     return (
         <>
+            <button onClick={() => setCn('bar xxx aaaa')}>change classname</button>
             <fieldset>
                 <legend>Normal</legend>
                 <Tags
                     tagifyRef={tagifyRef}
+                    className={cn}
                     placeholder={placeholder}
+                    whitelist={["aaa", "xxx"]}
                     settings={{
-                        maxTags: MAX_TAGS
+                        maxTags: MAX_TAGS,
+                        dropdown: {
+                            enabled: true
+                        }
+                        // templates: {
+
+                        // }
                     }}
                     defaultValue="a,b"
                     autoFocus={true}
